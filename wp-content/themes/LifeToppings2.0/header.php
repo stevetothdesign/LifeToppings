@@ -44,34 +44,38 @@
 
 		<div id="container">
 
-			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+			<header class="header__main-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
-				<div id="inner-header" class="wrap cf">
+				<div id="inner-header">
+          <button class="js-open-drawer header__menu-toggle material-icons">menu</button>
 
-					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
-					<p id="logo" class="h1" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></p>
+					<h1 id="logo" itemscope itemtype="http://schema.org/Organization">
+            <a href="<?php echo home_url(); ?>" rel="nofollow"><object type="image/svg+xml" data="<?php echo get_template_directory_uri(); ?>/library/images/logos/main-logo.svg" /></object></a>
+          </h1>
 
-					<?php // if you'd like to use the site description you can un-comment it below ?>
-					<?php // bloginfo('description'); ?>
-
-
-					<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-						<?php wp_nav_menu(array(
-    					         'container' => false,                           // remove nav container
-    					         'container_class' => 'menu cf',                 // class of container (should you choose to use it)
-    					         'menu' => __( 'The Main Menu', 'lttheme' ),  // nav name
-    					         'menu_class' => 'nav top-nav cf',               // adding custom nav class
-    					         'theme_location' => 'main-nav',                 // where it's located in the theme
-    					         'before' => '',                                 // before the menu
-        			               'after' => '',                                  // after the menu
-        			               'link_before' => '',                            // before each link
-        			               'link_after' => '',                             // after each link
-        			               'depth' => 0,                                   // limit the depth of the nav
-    					         'fallback_cb' => ''                             // fallback function (if there is one)
-						)); ?>
-
-					</nav>
-
-				</div>
-
+					<div class="nav__drawer" role="drawer" itemscope itemtype="http://schema.org/SiteNavigationElement">
+						<div class="nav__drawer-wrapper" role="drawer__wrapper">
+              <div class="nav__drawer-header" role="drawer__header">
+                <button class="js-close-drawer header__menu-toggle material-icons">close</button>
+                <span class="nav__drawer-list">
+                  <a href="/signup" class="nav__drawer-header-link">Sign Up</a>
+                </span>
+              </div><!--- .nav__drawer-header -->  
+            
+                <?php wp_nav_menu(array(
+    					    'container' => false,                           // remove nav container
+    					    'container_class' => 'nav nav__drawer-menu',    // class of container (should you choose to use it)
+    					    'menu' => __( 'The Main Menu', 'lttheme' ),     // nav name
+    					    'menu_class' => 'nav__drawer-menu',             // adding custom nav class
+    					    'theme_location' => 'main-nav',                 // where it's located in the theme
+    					    'before' => '',                                 // before the menu
+        			    'after' => '',                                  // after the menu
+        			    'link_before' => '',                            // before each link
+        			    'link_after' => '',                             // after each link
+        			    'depth' => 0,                                   // limit the depth of the nav
+    					    'fallback_cb' => ''                             // fallback function (if there is one)
+						    )); ?>
+					</div><!-- end .nav__drawer -->
+				</div><!-- end .inner-header -->
 			</header>
+

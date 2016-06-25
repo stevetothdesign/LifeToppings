@@ -164,27 +164,32 @@ can replace these fonts, change it in your scss files
 and be up and running in seconds.
 */
 function lt_fonts() {
-  wp_enqueue_style('googleFonts', '//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic');
+  wp_enqueue_style( 'googleFonts', '//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' );
+  wp_enqueue_style( 'font-awesome', get_stylesheet_directory_uri() . '/library/fonts/font-awesome.css' ); 
+  wp_enqueue_style( 'google-material', 'https://fonts.googleapis.com/icon?family=Material+Icons' );
+  wp_enqueue_script( 'typekit', 'https://use.typekit.net/wtk7rtm.js' );
 }
 
 add_action('wp_enqueue_scripts', 'lt_fonts');
 
+function lt_typekit_script() {
+	echo '<script>try{Typekit.load({ async: true });}catch(e){}</script>';
+}
+
+add_action( 'wp_head', 'lt_typekit_script', 99 );
+
+/*********************
+CUSTOM WIDGETS
+*********************/
+/*
+Widgets for the sidebar
+*/
 require_once 'widget.php';
 
 add_action('widgets_init', function() {
   register_widget('MyWidget');
 });
 
-
-add_action('wp_head', function() { ?>
-  <style type='text/css'>
-    body {
-      background-color: <?php echo get_theme_mod('bg-color'); ?>;
-      color: <?php echo get_theme_mod('textcolor'); ?>;
-      font-family: <?php echo get_theme_mod('font'); ?>;
-    }
-  </style>
-<?php });
 
 // Adding WP 3+ Functions & Theme Support
 function lt_theme_support() {
@@ -206,37 +211,25 @@ function lt_theme_support() {
 	    )
 	);
   
+  add_action('wp_head', function() { ?>
+    <style type='text/css'>
+      .st0 {
+        fill: <?php echo get_theme_mod('logo_color'); ?> !important;
+      }
+    </style>
+  <?php });
+  
   add_action('customize_register', function($lt_custom) {
-    $lt_custom->add_setting('bg_color', array(
-      'default' => 'white'
-    ));
+      $lt_custom->add_setting('logo_color', array(
+        'default' => 'white'
+      ));
   
-    $lt_custom->add_setting('textcolor', array(
-      'default' => 'black'
-    ));
-  
-    $lt_custom->add_setting('font', array(
-      'default' => 'serif'
-    ));
-  
-    $lt_custom->add_control('bgcolor-control', array(
-      'label' => 'Background Color',
-      'section' => 'colors',
-      'settings' => 'bg-color'
-    ));
-  
-    $lt_custom->add_control('textcolor-control', array(
-      'label' => 'Text Color',
-      'section' => 'colors',
-      'settings' => 'textcolor'
-    ));
-  
-    $lt_custom->add_control('font-control', array(
-      'label' => 'Font',
-      'section' => 'colors',
-      'settings' => 'font'
-    ));
-  });
+      $lt_custom->add_control('logo-color-control', array(
+        'label' => 'Logo Color',
+        'section' => 'colors',
+        'settings' => 'logo_color'
+      ));
+    });
   
 	// rss thingy
 	add_theme_support('automatic-feed-links');
