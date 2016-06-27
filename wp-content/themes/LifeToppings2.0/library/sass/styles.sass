@@ -6,38 +6,55 @@ html, body
   font-family: $sans-serif
 
 img
-  max-width: 100%
+  width: 100%
+  height: auto
 
 #container
   padding: 0
 
 header
 
+.row
+  width: 100%
+  display: flex
+
+.desktop-nav
+  display: none
+
 .header__main-header
   position: fixed
   width: 100%
   top: 0
   background: $white
+  display: flex
+  
+  button
+    padding: 10px
+
+    
+    &.js-open-drawer, &.js-close-drawer
+      left: 0px
+      font-size: 2em
+
+    &.js-open-drawer
+      color: $color-2
 
   #inner-header
-    position: relative
-    
-    button
-      line-height: 2em
+    padding: 0
+    flex: 1
     
     #logo
-      position: absolute
-      left: 70px
-      top: 0px
+      margin: 12px 0 0 10px
       
-      object 
-        max-width: 100%
-  
+      img 
+        width: 175px
+        height: 100%
 
   .nav__drawer
     position: fixed
     top: 0
     left: 0
+    right: 0
     width: 100%
     height: 0% !important
     overflow: hidden
@@ -46,44 +63,71 @@ header
     transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1)
     background: $color-2
     color: #fff
+    display: block
     
+    a
+      text-transform: uppercase
     
     .nav__drawer-wrapper
             
       .nav__drawer-header
-        width: 100%
-        background: $white
+        display: flex
         
-        .nav__drawer-list
-          display: inline
-          padding: 0 10px
-          
-          a
-            text-transform: uppercase
-      
-      ul
-        &.nav__drawer-menu
-          margin-top: 40px
-          padding: 0px 10px 20px
-          -webkit-transition: padding 0.6s cubic-bezier(0.4, 0, 0.2, 1)
-          -moz-transition: padding 0.6s cubic-bezier(0.4, 0, 0.2, 1)
-          transition: padding 0.6s cubic-bezier(0.4, 0, 0.2, 1)
+        .js-close-drawer
+          color: $white
+          left: 0px
+          font-size: 2em
         
-        li
-          border-bottom: 1px solid $white
-          padding: 20px 10px 20px 50px
+        #inner-header
+          padding: 0
+          flex: 1
+        
+        .nav__drawer-links
+          position: absolute
+          top: 5px
+          right: 10px
+          padding: 20px 0 10px
           
           a
             color: $white
-            text-transform: uppercase
-    
-    
-.js-open-drawer, .js-close-drawer
-  color: $color-1
-  position: relative
-  left: 0px
-  background: $white
-  width: 50px
+            padding: 10px 20px 10px
+            border: 0px solid $white
+            font-size: .8em
+            
+            &:hover
+              color: $color-4
+              border: 1px solid $color-4
+            
+/* ----------------  MAIN NAV  ----------------- */
+/* --------------------------------------------- */
+nav     
+ul
+  &.nav__drawer-menu
+    margin-top: 40px
+    padding: 0px 10px 20px
+  
+  li
+   
+    a
+      color: $white
+      text-transform: uppercase
+      border-bottom: 1px solid $white
+      padding: 20px 0px 20px 0px
+      text-align: center
+      vertical-align: middle
+      display: block
+      font-weight: 400
+      letter-spacing: .2em
+      
+      &:hover
+        color: $color-4
+        background: $white
+        font-weight: 600
+        
+#social-buttons
+  display: flex
+  .social-media-icons
+    display: inline
 
 header.nav--open
   height: 53px 
@@ -105,8 +149,65 @@ header.nav--open
     overflow-y: scroll
     -webkit-overflow-scrolling: touch
    
-   
-#content
-  padding: 10px
-  margin-top: 52px
 
+/* ----------------  CONTENT  ----------------- */
+/* -------------------------------------------- */   
+#content
+  margin-top: 52px
+  max-width: 100%
+
+#inner-content
+  display: block
+  
+#main
+  
+article
+
+.post
+
+.article-header
+  border-bottom: 1px solid $color-4
+  margin: 10px
+
+  .entry-title
+    font-weight: 200
+    letter-spacing: .15em
+    a
+      color: $color-4
+      
+      &:hover
+        color: $hover
+
+  .byline 
+    padding: 10px 0
+    color: $color-4
+    font-size: .8em
+    letter-spacing: .1em
+    text-transform: uppercase
+    
+    .updated
+    
+  
+.entry-content
+  padding: 10px
+  
+
+  /* ----------------  SIDEBAR  ----------------- */
+  /* -------------------------------------------- */     
+  .sidebar
+    padding: 10px
+    background: $color-6
+
+
+/* ----------------  FOOTER  ----------------- */
+/* ------------------------------------------- */
+
+.footer
+  width: 100%
+  padding: 20px
+  background: red
+
+  #inner-footer
+
+@import 'tablet'
+@import 'desktop'

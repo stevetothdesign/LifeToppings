@@ -1,0 +1,28 @@
+@media (min-width: 768px) {
+  .header__main-header #inner-header #logo img {
+    width: 300px; }
+
+  /* ----------------  NAV  ----------------- */
+  /* ---------------------------------------- */
+  .nav__drawer {
+    max-height: 500px; }
+    .nav__drawer ul {
+      width: 100%; }
+
+  /* ----------------  CONTENT  ----------------- */
+  /* -------------------------------------------- */
+  #content {
+    padding: 10px;
+    margin-top: 52px; }
+
+  #inner-content {
+    display: flex; }
+    #inner-content #main {
+      width: 70%;
+      padding: 0 10px 0 0; }
+    #inner-content .sidebar {
+      padding: 10px;
+      width: 30%;
+      background: #f5f7fa; } }
+
+/*# sourceMappingURL=tablet.css.map */

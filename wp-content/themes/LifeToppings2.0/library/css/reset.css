@@ -17,10 +17,6 @@ body {
 ol, ul {
   list-style: none; }
 
-a {
-  color: #bab288;
-  text-decoration: none; }
-
 blockquote, q {
   quotes: none; }
 
@@ -38,12 +34,27 @@ table {
 
 button {
   background: none;
-  border: none; }
+  border: none;
+  cursor: pointer; }
 
 h1 {
   font-size: 2em;
   font-weight: 600;
+  text-transform: uppercase; }
+
+h2 {
+  font-size: 1.75em;
+  font-weight: 600;
   margin: 10px 0;
   text-transform: uppercase; }
+
+p {
+  font-family: "freight-display-pro"; }
+
+a {
+  color: #bab288;
+  text-decoration: none; }
+  a:hover {
+    color: #ffa4ad; }
 
 /*# sourceMappingURL=reset.css.map */

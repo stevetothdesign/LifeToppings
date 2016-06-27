@@ -2,7 +2,7 @@
 
 			<div id="content">
 
-				<div id="inner-content" class="wrap cf">
+				<div id="inner-content">
 
 						<main id="main">
 
@@ -12,29 +12,27 @@
 
 								<header class="article-header">
 
-									<h1 class="h2 entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-									<p class="byline entry-meta vcard">
-                                                                        <?php printf( __( 'Posted', 'lttheme' ).' %1$s %2$s',
-                       								/* the time the post was published */
-                       								'<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
-                       								/* the author of the post */
-                       								'<span class="by">'.__( 'by', 'lttheme').'</span> <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person">' . get_the_author_link( get_the_author_meta( 'ID' ) ) . '</span>'
-                    							); ?>
-									</p>
+									<h1 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
+									<div class="byline entry-meta vcard">
+                    <?php printf( __( '', 'lttheme' ).' %1$s',
+                    /* the time the post was published */
+                    '<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>'
+                    ); ?>
+									</div>
 
 								</header>
 
-								<section class="entry-content cf">
+								<section class="entry-content">
 									<?php the_content(); ?>
 								</section>
 
-								<footer class="article-footer cf">
+								<footer class="article-footer">
 									<p class="footer-comment-count">
 										<?php comments_number( __( '<span>No</span> Comments', 'lttheme' ), __( '<span>One</span> Comment', 'lttheme' ), __( '<span>%</span> Comments', 'lttheme' ) );?>
 									</p>
 
 
-                 	<?php printf( '<p class="footer-category">' . __('filed under', 'lttheme' ) . ': %1$s</p>' , get_the_category_list(', ') ); ?>
+                 	<?php printf( '<p class="footer-category">' . __('Filed under', 'lttheme' ) . ': %1$s</p>' , get_the_category_list(', ') ); ?>
 
                   <?php the_tags( '<p class="footer-tags tags"><span class="tags-title">' . __( 'Tags:', 'lttheme' ) . '</span> ', ', ', '</p>' ); ?>
 
@@ -49,7 +47,7 @@
 
 							<?php else : ?>
 
-									<article id="post-not-found" class="hentry cf">
+									<article id="post-not-found" class="hentry">
 											<header class="article-header">
 												<h1><?php _e( 'Oops, Post Not Found!', 'lttheme' ); ?></h1>
 										</header>

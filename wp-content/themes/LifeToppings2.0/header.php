@@ -45,37 +45,93 @@
 		<div id="container">
 
 			<header class="header__main-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
-
-				<div id="inner-header">
+        <div class="row">
           <button class="js-open-drawer header__menu-toggle material-icons">menu</button>
+          <div id="inner-header">
+      			<a href="<?php echo home_url(); ?>" rel="nofollow">
+              <h1 id="logo" itemscope itemtype="http://schema.org/Organization">
+                <img src="<?php echo get_template_directory_uri(); ?>/library/images/logos/main-logo.svg" />
+              </h1>
+            </a>
 
-					<h1 id="logo" itemscope itemtype="http://schema.org/Organization">
-            <a href="<?php echo home_url(); ?>" rel="nofollow"><object type="image/svg+xml" data="<?php echo get_template_directory_uri(); ?>/library/images/logos/main-logo.svg" /></object></a>
-          </h1>
-
-					<div class="nav__drawer" role="drawer" itemscope itemtype="http://schema.org/SiteNavigationElement">
-						<div class="nav__drawer-wrapper" role="drawer__wrapper">
-              <div class="nav__drawer-header" role="drawer__header">
-                <button class="js-close-drawer header__menu-toggle material-icons">close</button>
-                <span class="nav__drawer-list">
-                  <a href="/signup" class="nav__drawer-header-link">Sign Up</a>
-                </span>
-              </div><!--- .nav__drawer-header -->  
+  					<div class="nav__drawer" role="drawer" itemscope itemtype="http://schema.org/SiteNavigationElement">
+  						<div class="nav__drawer-wrapper" role="drawer__wrapper">
+                <div class="nav__drawer-header" role="drawer__header">
+                  <button class="js-close-drawer header__menu-toggle material-icons">close</button>
+                  <div class="nav__drawer-links">
+                    <a href="<?php echo home_url() . '/signup';?>" class="nav__drawer-header-link">Sign Up</a>
+                  </div>
+                </div><!--- .nav__drawer-header -->  
             
-                <?php wp_nav_menu(array(
-    					    'container' => false,                           // remove nav container
-    					    'container_class' => 'nav nav__drawer-menu',    // class of container (should you choose to use it)
-    					    'menu' => __( 'The Main Menu', 'lttheme' ),     // nav name
-    					    'menu_class' => 'nav__drawer-menu',             // adding custom nav class
-    					    'theme_location' => 'main-nav',                 // where it's located in the theme
-    					    'before' => '',                                 // before the menu
-        			    'after' => '',                                  // after the menu
-        			    'link_before' => '',                            // before each link
-        			    'link_after' => '',                             // after each link
-        			    'depth' => 0,                                   // limit the depth of the nav
-    					    'fallback_cb' => ''                             // fallback function (if there is one)
-						    )); ?>
-					</div><!-- end .nav__drawer -->
-				</div><!-- end .inner-header -->
+                  <?php wp_nav_menu(array(
+      					    'container' => false,                           // remove nav container
+      					    'container_class' => 'nav nav__drawer-menu',    // class of container (should you choose to use it)
+      					    'menu' => __( 'The Main Menu', 'lttheme' ),     // nav name
+      					    'menu_class' => 'nav__drawer-menu',             // adding custom nav class
+      					    'theme_location' => 'main-nav',                 // where it's located in the theme
+      					    'before' => '',                                 // before the menu
+          			    'after' => '',                                  // after the menu
+          			    'link_before' => '',                            // before each link
+          			    'link_after' => '',                             // after each link
+          			    'depth' => 0,                                   // limit the depth of the nav
+      					    'fallback_cb' => ''                             // fallback function (if there is one)
+  						    )); ?>
+                  
+              		<div id="socialbuttons">
+              			<ul class="social-media-icons">
+              		  	<li>
+              	        <a href="https://www.facebook.com/lifetoppings">
+              	        <i class="fa fa-facebook"></i>
+              	        </a>
+              	      </li>
+              	      <li>
+              	        <a href="https://twitter.com/LifeToppings">
+              	        <i class="fa fa-twitter"></i>
+              	        </a>
+              	      </li>
+              	      <li>
+              	        <a href="https://instagram.com/beckyturcich">
+              	        <i class="fa fa-instagram"></i>
+              	        </a>
+              	      </li>
+              	      <li>
+              	        <a href="https://www.pinterest.com/turcich/">
+              	       <i class="fa fa-pinterest"></i>
+              	        </a>
+              	      </li>
+              	      <li>
+              	        <a href="http://rturcich.tumblr.com/">
+              	        <i class="fa fa-tumblr"></i>
+              	        </a>
+              	      </li>
+              	      <li>
+              	        <a href="https://www.bloglovin.com/blogs/lifetoppings-14058471">
+              	        <i class="fa fa-heart"></i>
+              	        </a>
+              	      </li>
+              			</ul> 
+              		</div><!-- .socialbuttons -->
+  					   </div><!-- end .nav__drawer-wrapper -->
+            </div><!-- end .nav__drawer -->
+          
+            <div class="desktop-nav">
+              <?php wp_nav_menu(array(
+  					    'container' => false,                           // remove nav container
+  					    'container_class' => 'nav desktop-nav-menu',    // class of container (should you choose to use it)
+  					    'menu' => __( 'The Main Menu', 'lttheme' ),     // nav name
+  					    'menu_class' => 'desktop-nav-menu',             // adding custom nav class
+  					    'theme_location' => 'main-nav',                 // where it's located in the theme
+  					    'before' => '',                                 // before the menu
+      			    'after' => '',                                  // after the menu
+      			    'link_before' => '',                            // before each link
+      			    'link_after' => '',                             // after each link
+      			    'depth' => 0,                                   // limit the depth of the nav
+  					    'fallback_cb' => ''                             // fallback function (if there is one)
+  				    )); ?>
+            </div><!-- end .desktop-nav -->
+          
+          
+  				</div><!-- end .inner-header -->
+        </div><!-- end row -->
 			</header>
 
