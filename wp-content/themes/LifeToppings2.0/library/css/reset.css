@@ -55,6 +55,7 @@ a {
   color: #bab288;
   text-decoration: none; }
   a:hover {
-    color: #ffa4ad; }
+    color: #ffa4ad;
+    cursor: pointer; }
 
 /*# sourceMappingURL=reset.css.map */

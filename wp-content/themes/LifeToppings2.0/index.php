@@ -14,6 +14,9 @@
 
 									<h1 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
 									<div class="byline entry-meta vcard">
+                    
+                    <?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago on '; ?>
+                    
                     <?php printf( __( '', 'lttheme' ).' %1$s',
                     /* the time the post was published */
                     '<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>'

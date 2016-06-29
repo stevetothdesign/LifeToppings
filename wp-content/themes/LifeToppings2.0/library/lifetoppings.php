@@ -184,11 +184,19 @@ CUSTOM WIDGETS
 /*
 Widgets for the sidebar
 */
-require_once 'widget.php';
+require_once 'widgets/widget.php';
 
 add_action('widgets_init', function() {
   register_widget('MyWidget');
 });
+
+require_once 'widgets/social-widget.php';
+
+add_action('widgets_init', function() {
+  register_widget('SocialWidget');
+});
+
+require_once 'widgets/my-featured-content.php';
 
 
 // Adding WP 3+ Functions & Theme Support

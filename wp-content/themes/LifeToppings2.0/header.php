@@ -77,7 +77,7 @@
       					    'fallback_cb' => ''                             // fallback function (if there is one)
   						    )); ?>
                   
-              		<div id="socialbuttons">
+              		<div id="social-buttons">
               			<ul class="social-media-icons">
               		  	<li>
               	        <a href="https://www.facebook.com/lifetoppings">

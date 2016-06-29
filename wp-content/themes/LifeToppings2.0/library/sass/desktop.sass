@@ -4,11 +4,19 @@
   .header__main-header
     border-bottom: 1px solid $color-6
     display: flex
-    padding: 20px 0 10px
+    padding: 60px 0 10px
+    -webkit-transition: padding-top 0.3s ease-out
+    -moz-transition: padding-top 0.3s ease-out
+    transition: padding-top 0.3s ease-out
     
+    &.scrolled
+      padding: 10px 0 10px
+      -webkit-transition: padding-top 0.3s ease-out
+      -moz-transition: padding-top 0.3s ease-out
+      transition: padding-top 0.3s ease-out
 
   .row
-    max-width: 1400px
+    max-width: 1200px
     margin: 0 auto 
 
   .js-open-drawer 
@@ -17,9 +25,9 @@
   /* ---------------------------------------- */
   #inner-header
     display: flex
+    text-align: right
     
     #logo
-      margin: 11px 0 0 10px
       
     img 
       width: 600px
@@ -29,13 +37,36 @@
     display: none
   
   .desktop-nav
-    display: inline-block
-    background: red
+    display: flex
+    flex: 1
+    flex-direction: row-reverse
 
     ul
       &.desktop-nav-menu
-        width: 400px
         display: flex
+        margin: 0
+
+        
+        li
+          padding: 0
+          
+          a
+            border: none
+            color: $color-2
+            padding: 20px
+            
+            &:hover
+              color: $color-1
+              background: none
+              border-bottom: 2px solid $color-1
+              font-weight: 400
+            
+      
+        .current-menu-item a, .current-page-item a
+          color: $color-1
+          background: none
+          border-bottom: 2px solid $color-1
+          
         
 
   /* ----------------  CONTENT  ----------------- */
@@ -43,11 +74,11 @@
     
   #content
     padding: 10px
-    margin-top: 100px
+    margin-top: 150px
 
   #inner-content
     display: flex
-    max-width: 1400px
+    max-width: 1200px
     margin: 0 auto
 
     #main
@@ -57,4 +88,3 @@
     .sidebar
       padding: 10px
       width: 300px
-      background: $color-6

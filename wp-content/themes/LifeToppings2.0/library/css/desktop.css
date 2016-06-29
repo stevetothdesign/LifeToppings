@@ -1,11 +1,19 @@
 @media (min-width: 1200px) {
   .header__main-header {
-    border-bottom: 1px solid #f5f7fa;
+    border-bottom: 1px solid #F2F2F2;
     display: flex;
-    padding: 20px 0 10px; }
+    padding: 60px 0 10px;
+    -webkit-transition: padding-top 0.3s ease-out;
+    -moz-transition: padding-top 0.3s ease-out;
+    transition: padding-top 0.3s ease-out; }
+    .header__main-header.scrolled {
+      padding: 10px 0 10px;
+      -webkit-transition: padding-top 0.3s ease-out;
+      -moz-transition: padding-top 0.3s ease-out;
+      transition: padding-top 0.3s ease-out; }
 
   .row {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto; }
 
   .js-open-drawer {
@@ -14,9 +22,8 @@
   /* ----------------  NAV  ----------------- */
   /* ---------------------------------------- */
   #inner-header {
-    display: flex; }
-    #inner-header #logo {
-      margin: 11px 0 0 10px; }
+    display: flex;
+    text-align: right; }
     #inner-header img {
       width: 600px;
       height: 100%; }
@@ -25,28 +32,43 @@
     display: none; }
 
   .desktop-nav {
-    display: inline-block;
-    background: red; }
+    display: flex;
+    flex: 1;
+    flex-direction: row-reverse; }
     .desktop-nav ul.desktop-nav-menu {
-      width: 400px;
-      display: flex; }
+      display: flex;
+      margin: 0; }
+      .desktop-nav ul.desktop-nav-menu li {
+        padding: 0; }
+        .desktop-nav ul.desktop-nav-menu li a {
+          border: none;
+          color: #ffa4ad;
+          padding: 20px; }
+          .desktop-nav ul.desktop-nav-menu li a:hover {
+            color: #ff7e99;
+            background: none;
+            border-bottom: 2px solid #ff7e99;
+            font-weight: 400; }
+      .desktop-nav ul.desktop-nav-menu .current-menu-item a, .desktop-nav ul.desktop-nav-menu .current-page-item a {
+        color: #ff7e99;
+        background: none;
+        border-bottom: 2px solid #ff7e99; }
 
   /* ----------------  CONTENT  ----------------- */
   /* -------------------------------------------- */
   #content {
     padding: 10px;
-    margin-top: 100px; }
+    margin-top: 150px; }
 
   #inner-content {
     display: flex;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto; }
     #inner-content #main {
       flex: 1;
       padding: 0 10px 0 0; }
     #inner-content .sidebar {
       padding: 10px;
-      width: 300px;
-      background: #f5f7fa; } }
+      width: 300px; } }
 
 /*# sourceMappingURL=desktop.css.map */

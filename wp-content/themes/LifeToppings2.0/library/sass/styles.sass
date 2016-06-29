@@ -5,6 +5,10 @@ html, body
   background-color: $white
   font-family: $sans-serif
 
+p
+  margin: 0 0 1em
+  line-height: 1.5em
+
 img
   width: 100%
   height: auto
@@ -61,7 +65,7 @@ header
     -webkit-transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1)
     -moz-transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1)
     transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1)
-    background: $color-2
+    background: $color-1
     color: #fff
     display: block
     
@@ -124,10 +128,32 @@ ul
         background: $white
         font-weight: 600
         
+  .current-menu-item a, .current-page-item a
+    color: $white
+    background: $color-2
+      
 #social-buttons
-  display: flex
-  .social-media-icons
-    display: inline
+  width: 100%
+  max-width: 400px
+  margin: 0 auto
+
+  ul
+    &.social-media-icons
+      display: flex
+      margin: 0 auto
+      width: 70%
+
+      li
+        flex: 1
+
+        a
+          padding: 10px 10px 20px 10px
+          border-bottom: none
+          color: $white
+  
+          &:hover
+            color: $color-4
+            background: none
 
 header.nav--open
   height: 53px 
@@ -153,7 +179,7 @@ header.nav--open
 /* ----------------  CONTENT  ----------------- */
 /* -------------------------------------------- */   
 #content
-  margin-top: 52px
+  margin-top: 75px
   max-width: 100%
 
 #inner-content
@@ -170,8 +196,9 @@ article
   margin: 10px
 
   .entry-title
-    font-weight: 200
-    letter-spacing: .15em
+    font-weight: lighter
+    letter-spacing: .05em
+    
     a
       color: $color-4
       
@@ -190,13 +217,82 @@ article
   
 .entry-content
   padding: 10px
-  
 
-  /* ----------------  SIDEBAR  ----------------- */
-  /* -------------------------------------------- */     
-  .sidebar
+.article-footer
+  padding: 10px
+
+/* ----------------  SIDEBAR  ----------------- */
+/* -------------------------------------------- */     
+.sidebar
+  padding: 10px
+  background: $white
+  margin-top: 27px
+  
+  .widget
+    margin: 0 0 10px
     padding: 10px
-    background: $color-6
+    
+    p
+      font-family: $sans-serif
+      font-size: 14px
+      font-weight: lighter
+      line-height: 1.25em
+      
+    ul
+      li
+        a
+          color: $color-2
+          text-transform: uppercase
+          border-bottom: 1px solid $color-6
+          padding: 10px 0px 10px 10px
+          text-align: left
+          vertical-align: middle
+          display: block
+          font-size: .8em
+          font-weight: 400
+          letter-spacing: 0
+    
+          &:hover
+            color: $white
+            background: $color-2
+            font-weight: 600
+  
+  .social-widget
+    padding: 10px
+    background: $color-1
+    
+    h4.widgettitle
+      color: $white
+      border-color: $white
+    
+  h4.widgettitle
+    color: $color-4
+    font-size: 1em
+    font-weight: 600
+    letter-spacing: .1em
+    margin-bottom: 10px
+    border-bottom: 1px solid $color-4
+    padding: 0 0 10px 10px
+    text-align: left
+    text-transform: uppercase
+    
+    
+  #social-buttons
+    ul
+      &.social-media-icons
+        display: flex
+        margin: 0
+        width: 100%
+
+        li
+          flex: 1
+
+          a
+            padding: 10px 5px
+
+            &:hover
+              color: $color-2
+              background: none
 
 
 /* ----------------  FOOTER  ----------------- */
@@ -205,9 +301,13 @@ article
 .footer
   width: 100%
   padding: 20px
-  background: red
+  background: $white
+  border-top: 1px solid $color-6
 
   #inner-footer
+    p
+      font-family: $sans-serif 
 
 @import 'tablet'
 @import 'desktop'
+@import 'sharing'
